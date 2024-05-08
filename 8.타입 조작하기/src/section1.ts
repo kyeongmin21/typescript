@@ -14,7 +14,7 @@ type List = {
 function printList(title: List['title'], author: List['author']) {
   console.log(`${title} / ${author.id}`)
 }
-const list = {
+const list: List = {
   title: '제목',
   content: '내용입니다',
   author: {
@@ -51,6 +51,21 @@ const postList: PostList[number] = {
 
 printAuthorInfo(postList.author)
 
+
+function arrayPrintList(list: PostList[number]) {
+  console.log(`${list.title}`)
+}
+
+const arrList: PostList[number] = {
+  title: '제목',
+  content: '내용',
+  author: {
+    id: 1,
+    name: '민'
+  }
+}
+
+arrayPrintList(arrList)
 
 /**
  * 튜플 타입
