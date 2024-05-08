@@ -3,6 +3,7 @@
  */
 
 class List<T> {
+  // 클래스 내부에서만 접근
   constructor(private list: T[]) {}
 
   push(data: T) {

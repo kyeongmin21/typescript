@@ -6,7 +6,7 @@ const arr = [1, 2, 3]
 const str = ['a', 'b', 'c']
 const newArr = arr.map((item) => item * 2)
 
-function map<T, U>(arr: T[], callback: (item: T) => U) {
+function map<T, U>(arr: T[], callback: (item: T) => U): U[] {
   let result = []
   for (let i = 0; i < arr.length; i++) {
     result.push(callback(arr[i]))
