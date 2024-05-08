@@ -1,7 +1,32 @@
 /**
  * 인덱스드 엑세스 타입
+ * 객체
  */
+type List = {
+  title: string;
+  content: string;
+  author: {
+    id: number;
+    name: string;
+  }
+}
 
+function printList(title: List['title'], author: List['author']) {
+  console.log(`${title} / ${author.id}`)
+}
+const list = {
+  title: '제목',
+  content: '내용입니다',
+  author: {
+    id: 100,
+    name: 'min'
+  }
+}
+printList(list.title, list.author)
+
+/**
+ * 배열
+ */
 type PostList = {
   title: string;
   content: string;
@@ -15,7 +40,7 @@ function printAuthorInfo(author: PostList[number]['author']) {
   console.log(`${author.name}-${author.id}`)
 }
 
-const post: PostList[number] = {
+const postList: PostList[number] = {
   title: '제목',
   content: '내용',
   author: {
@@ -24,7 +49,7 @@ const post: PostList[number] = {
   }
 }
 
-printAuthorInfo(post.author)
+printAuthorInfo(postList.author)
 
 
 /**

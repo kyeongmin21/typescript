@@ -1,5 +1,7 @@
 /**
- * keyof 연산자 (객체타입)
+ * keyof 연산자
+ * 객체 타입으로부터 프로퍼티의 모든 key 들을
+ * String Literal Union 타입으로 추출하는 연산자
  */
 
 interface Person {
