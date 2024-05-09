@@ -19,3 +19,20 @@ const person: Person = {
 }
 
 getPropertyKey(person, 'name') // 민
+
+
+const obj = { red: 'apple', yellow: 'banana' }
+type Key = typeof obj[keyof typeof obj] // 객체의 value 들만 가져와 상수 타입으로
+
+
+/**
+ * keyof typeof 같이 사용한 예시
+ */
+
+// bmw 객체를 타입으로 사용하는 것이 아니라,해당 객체의 타입을 추출하는 것입니다.
+// 이를 위해 typeof 연산자를 사용하여 변수의 타입을 추출해야 합니다.
+const bmw = { name: 'BMW', power: '1000hp' }
+type CarLiteralType = keyof typeof bmw
+let carLiteralType: CarLiteralType
+carLiteralType = 'name'
+// carLiteralType = 'age'  error!!

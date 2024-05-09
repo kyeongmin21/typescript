@@ -2,12 +2,15 @@
  * Exclude<T, U>
  * T에서 U를 제거하는 타입
  */
+type T0 = Exclude<'a' | 'b' | 'c', 'a'>       // type T0 = 'b' | 'c'
+type T1 = Exclude<'a' | 'b' | 'c', 'a' | 'b'> // type T1 = 'c'
 
 type Exclude<T, U> = T extends U ? never : T
 type A = Exclude<string | boolean, boolean>
 // Exclude<string, boolean> => string
 // Exclude<boolean, boolean> => never
 // 결과 string
+
 
 /**
  * Extract<T, K>
@@ -16,6 +19,7 @@ type A = Exclude<string | boolean, boolean>
 
 type Extract<T, U> = T extends U ? T : never
 type B = Extract<string | boolean, boolean>
+// 결과 boolean
 
 /**
  * ReturnType

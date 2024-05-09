@@ -16,10 +16,19 @@ type Partial<T> = {
   [key in keyof T]?: T[key]
 }
 
-const draft: Partial<Post>= {
+const partialPost: Partial<Post>= {
   title: '나중에',
   content: '초안,,,,'
 }
+
+type Hero = 'Hulk' | 'Thor' | 'Capt'
+type HeroProfile = {[K in Hero]?: number}
+const h: HeroProfile = {
+  'Hulk': 10,
+  'Thor': 20,
+  'Capt': 30,
+}
+
 
 /**
  * Required<T>
@@ -31,7 +40,7 @@ type Required<T> = {
   [key in keyof T]-?: T[key]
 }
 
-const widthThumbnailPost: Required<Post> = {
+const requiredPost: Required<Post> = {
   title: '한입타스후기',
   tags: ['ts'],
   content: '',

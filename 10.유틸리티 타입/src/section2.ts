@@ -10,7 +10,7 @@ interface Post {
 }
 type Pick<T, K extends keyof T> = {
   // K extends 'title' | 'tags' | 'content' | 'thumbnailURL'
-  // 'title' | 'tags' extends 'title' | 'tags' | 'content' | 'thumbnailURL'
+  // 'title' | 'content' extends 'title' | 'tags' | 'content' | 'thumbnailURL'
   [key in K]: T[key]
 }
 const legacyPost: Pick<Post, 'title' | 'content'> = {
@@ -35,7 +35,6 @@ const noTitlePos: Omit<Post, 'title'> = {
   content: '',
   thumbnailURL: ''
 }
-
 
 
 /**

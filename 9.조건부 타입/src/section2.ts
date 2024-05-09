@@ -1,5 +1,7 @@
 /**
  * 분산적인 조건부 타입
+ * Exclude: 제외
+ * Extract: 추출
  */
 type Exclude<T, U> = T extends U ? never : T;
 type A = Exclude<number | string | boolean, string>

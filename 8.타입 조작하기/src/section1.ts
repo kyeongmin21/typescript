@@ -2,7 +2,7 @@
  * 인덱스드 엑세스 타입
  * 객체
  */
-type List = {
+type ObjList = {
   title: string;
   content: string;
   author: {
@@ -11,10 +11,10 @@ type List = {
   }
 }
 
-function printList(title: List['title'], author: List['author']) {
+function printList(title: ObjList['title'], author: ObjList['author']) {
   console.log(`${title} / ${author.id}`)
 }
-const list: List = {
+const objList: ObjList = {
   title: '제목',
   content: '내용입니다',
   author: {
@@ -22,12 +22,13 @@ const list: List = {
     name: 'min'
   }
 }
-printList(list.title, list.author)
+printList(objList.title, objList.author)
+
 
 /**
  * 배열
  */
-type PostList = {
+type ArrList = {
   title: string;
   content: string;
   author: {
@@ -36,11 +37,11 @@ type PostList = {
   }
 }[]
 
-function printAuthorInfo(author: PostList[number]['author']) {
+function printAuthorInfo(author: ArrList[number]['author']) {
   console.log(`${author.name}-${author.id}`)
 }
 
-const postList: PostList[number] = {
+const arrList: ArrList[number] = {
   title: '제목',
   content: '내용',
   author: {
@@ -49,14 +50,14 @@ const postList: PostList[number] = {
   }
 }
 
-printAuthorInfo(postList.author)
+printAuthorInfo(arrList.author)
 
 
-function arrayPrintList(list: PostList[number]) {
+function arrayPrintList(list: ArrList[number]) {
   console.log(`${list.title}`)
 }
 
-const arrList: PostList[number] = {
+const list: ArrList[number] = {
   title: '제목',
   content: '내용',
   author: {
@@ -65,7 +66,8 @@ const arrList: PostList[number] = {
   }
 }
 
-arrayPrintList(arrList)
+arrayPrintList(list)
+
 
 /**
  * 튜플 타입
