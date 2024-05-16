@@ -17,7 +17,7 @@ const add = (a: number, b: number) => a + b
  */
 
 // 필수 매개변수는 선택적 매개변수보다 항상 앞에 있어야한다!
-function introduce(name= '민', tall?: number) {
+function introduce(name: string, tall?: number) {
   console.log(`${name}`)
   if (typeof tall === 'number') {
     console.log(`${tall + 10}`)
