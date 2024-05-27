@@ -25,6 +25,7 @@ type D = (value: 10) => void;
 let c: C = (value) => {};
 let d: D = (value) => {};
 
+// number 리터럴 타입이 number 타입의 자식이기 때문에 d 함수는 c 함수로 취급될 수 없음
 // c = d; 매개변수일 때는 업캐스팅이 안됨
 d = c;
 
@@ -60,6 +61,7 @@ let testFunc2 = (dog: Dog) => {
 
 // 2-2. 매개변수의 개수가 다를 때
 // 매개변수의 타입이 같고, 더 적은 매개변수에 할당은 가능
+// 매개변수가 더 많은 쪽으로 호환성을 판단하게 됩니다.
 type Func1 = (a: number, b: number) => void
 type Func2 = (a: number) => void
 
